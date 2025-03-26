@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: br4cwew54-go-gitops
+  description: This is GitOps manifest for br4cwew54-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=br4cwew54-go
+    backstage.io/kubernetes-id: br4cwew54-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: br4cwew54-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:br4cwew54-go

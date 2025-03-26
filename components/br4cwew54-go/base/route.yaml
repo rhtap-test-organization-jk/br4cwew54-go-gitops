@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: br4cwew54-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: br4cwew54-go 
+  name: br4cwew54-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: br4cwew54-go
+    weight: 100 
